@@ -1,9 +1,11 @@
 // App.js
+
 import React, { useState } from "react";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link, Navigate } from "react-router-dom";
 import Registration from "./components/Registration";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import TablePage from "./components/TablePage";
 import "./App.css";
 
 function App() {
@@ -18,13 +20,16 @@ function App() {
         <nav>
           <ul>
             <li>
-              <a href="/"></a>
+              <Link to="/"></Link>
             </li>
             <li>
-              <a href="/login"></a>
+              <Link to="/login"></Link>
             </li>
             <li>
-              <a href="/home"></a>
+              <Link to="/home"></Link>
+            </li>
+            <li>
+              <Link to="/table"></Link>
             </li>
           </ul>
         </nav>
@@ -39,6 +44,7 @@ function App() {
               path="/home"
               element={isLoggedIn ? <Home /> : <Navigate to="/login" />}
             />
+            <Route path="/table" element={<TablePage />} />
           </Routes>
         </div>
       </div>
