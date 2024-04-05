@@ -1,6 +1,7 @@
 // TablePage.js
 import React, { useState, useEffect } from "react";
 import "./TablePage.css";
+import { Link } from "react-router-dom";
 
 function TablePage() {
   const [productDetails, setProductDetails] = useState([]);
@@ -59,6 +60,15 @@ function TablePage() {
 
   return (
     <div className="TablePage">
+      <div className="navigation">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/home">Home</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <h2>All Product Details</h2>
       <table>
         <thead>
@@ -77,7 +87,11 @@ function TablePage() {
               <td>{product.id}</td>
               <td>{product.title}</td>
               <td>
-                <img src={product.thumbnail} alt={product.title} />
+                <img
+                  className="table-image"
+                  src={product.thumbnail}
+                  alt={product.title}
+                />
               </td>
               {editIndex === index ? (
                 <>

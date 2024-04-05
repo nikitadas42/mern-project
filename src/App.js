@@ -1,12 +1,13 @@
 // App.js
 
 import React, { useState } from "react";
-import { BrowserRouter, Route, Routes, Link, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Registration from "./components/Registration";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import TablePage from "./components/TablePage";
 import "./App.css";
+// import BreadCrumb from "./BreadCrumb";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,7 +18,8 @@ function App() {
         <header>
           <h1>My App</h1>
         </header>
-        <nav>
+        {/* <BreadCrumb /> */}
+        {/* <nav>
           <ul>
             <li>
               <Link to="/"></Link>
@@ -32,7 +34,7 @@ function App() {
               <Link to="/table"></Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
         <div className="container">
           <Routes>
             <Route path="/" element={<Registration />} />

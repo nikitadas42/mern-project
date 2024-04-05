@@ -1,5 +1,4 @@
 // Home.js
-
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Home.css";
@@ -74,6 +73,7 @@ function Home() {
           </ul>
         </nav>
       </div>
+
       <div className="products">
         <h3>Products:</h3>
         <div className="product-grid">
